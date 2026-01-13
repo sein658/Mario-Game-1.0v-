@@ -1,0 +1,126 @@
+:root {
+    --bg-color: #1a1a2e;
+    --accent-color: #e94560;
+    --text-color: #f3f4f6;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --mario-red: #ff3e3e;
+    --sky-blue: #5c94fc;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: radial-gradient(circle at 10% 20%, rgba(92, 148, 252, 0.1) 0%, transparent 20%),
+                      radial-gradient(circle at 90% 80%, rgba(233, 69, 96, 0.1) 0%, transparent 20%);
+}
+
+.main-container {
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+header h1 {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--mario-red);
+    text-shadow: 4px 4px 0px #000;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    letter-spacing: -2px;
+}
+
+header p {
+    color: #8892b0;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.game-wrapper {
+    position: relative;
+    padding: 10px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(8px);
+    display: inline-block;
+}
+
+canvas {
+    background: linear-gradient(to bottom, #5c94fc 0%, #85b4ff 100%);
+    border-radius: 8px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+    display: block;
+}
+
+.ui-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.85);
+    padding: 2rem 4rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.4);
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ui-overlay h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.game-over-text {
+    color: var(--accent-color) !important;
+}
+
+.controls-info {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    opacity: 0.7;
+}
+
+.key {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.key-cap {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-family: monospace;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

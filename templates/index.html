@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Python Bros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>SUPER PYTHON BROS</h1>
+            <p>파이썬으로 구동되는 HTML5 플랫포머</p>
+        </header>
+        
+        <div class="game-wrapper">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            <div class="ui-overlay" id="startScreen">
+                <h2>Press ENTER to Start</h2>
+                <p>Move: Arrow Keys | Jump: Space</p>
+            </div>
+            <div class="ui-overlay hidden" id="gameOverScreen">
+                <h2 class="game-over-text">GAME OVER</h2>
+                <p>Score: <span id="finalScore">0</span></p>
+                <p>Press ENTER to Restart</p>
+            </div>
+        </div>
+
+        <div class="controls-info">
+            <div class="key"><span class="key-cap">←</span> <span class="key-cap">→</span> Move</div>
+            <div class="key"><span class="key-cap">SPACE</span> Jump</div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
